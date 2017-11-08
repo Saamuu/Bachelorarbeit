@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : buoyantBoussinesqPimpleFoam -parallel
+Date   : Oct 27 2017
+Time   : 19:59:57
+Host   : "samu"
+PID    : 2830
+Case   : /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte
+nProcs : 4
+Slaves : 
+3
+(
+"samu.2831"
+"samu.2832"
+"samu.2833"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PIMPLE: Operating solver in PISO mode
+
+Reading thermophysical properties
+
+Reading field T
+
+[2] 
+[2] 
+[2] --> FOAM FATAL IO ERROR: [3] 
+[3] 
+[3] --> FOAM FATAL IO ERROR: 
+[3] cannot find file
+[3] 
+[3] file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/processor3/0/T at line 0.
+[3] 
+[3]     From function regIOobject::readStream()
+[3]     in file db/regIOobject/regIOobjectRead.C at line 72.
+[3] 
+FOAM parallel run exiting
+[3] 
+
+[2] cannot find file
+[2] 
+[2] file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/processor2/0/T at line 0.[1] 
+[1] 
+[1] --> FOAM FATAL IO ERROR: 
+[1] cannot find file
+[1] 
+[1] file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/processor1/0/T at line 0.
+[1] 
+[1]     From function regIOobject::readStream()
+[1]     in file db/regIOobject/regIOobjectRead.C at line 72.
+[1] 
+FOAM parallel run exiting
+[1] 
+
+[2] 
+[2]     From function regIOobject::readStream()
+[2] [0] 
+[0] 
+[0] --> FOAM FATAL IO ERROR: 
+[0] cannot find file
+[0] 
+[0] file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/processor0/0/T at line 0.
+[0] 
+[0]     From function regIOobject::readStream()
+[0]     in file db/regIOobject/regIOobjectRead.C at line 72.
+[0] 
+FOAM parallel run exiting
+[0] 
+    in file db/regIOobject/regIOobjectRead.C at line 72.
+[2] 
+FOAM parallel run exiting
+[2] 
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD 
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[samu:02828] 3 more processes have sent help message help-mpi-api.txt / mpi-abort
+[samu:02828] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

@@ -1,0 +1,67 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|       o          |                                                          |
+|    o     o       | OpenFOAM (Engys Edition):                                |
+|   o   O   o      | Version: 2.2_engysEdition-2.4                            |
+|    o     o       | Web:     http://www.engys.com                            |
+|       o          |                                                          |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 293.15;
+
+boundaryField
+{
+    inlet
+    {
+        type            inletOutlet;
+        inletValue      uniform 333.15; //60°C
+        value           uniform 333.15;
+    }
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform 293.15;
+        value           uniform 293.15;  //20°C
+    }
+    wall
+    {
+        type            zeroGradient;
+    }
+
+    wall1
+    {
+        type            zeroGradient;
+    }
+    wall2
+    {
+        type            zeroGradient;
+    }
+    wall3
+    {
+        type            zeroGradient;
+    }
+    wallInlet
+    {
+        type            zeroGradient;
+    }
+
+    wallOutlet
+    {
+        type            zeroGradient;
+    }
+
+
+}
+
+
+// ************************************************************************* //

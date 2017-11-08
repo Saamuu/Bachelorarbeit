@@ -1,0 +1,36 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : refineHexMesh c0 -overwrite
+Date   : Oct 27 2017
+Time   : 19:59:56
+Host   : "samu"
+PID    : 2823
+Case   : /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading cells to refine from cellSet c0
+
+
+
+--> FOAM FATAL ERROR: 
+Cannot find directory "polyMesh/sets" in times 0 down to constant
+
+    From function Foam::word Foam::Time::findInstance(const Foam::fileName&, const Foam::word&, Foam::IOobject::readOption, const Foam::word&) const
+    in file db/Time/findInstance.C at line 131.
+
+FOAM exiting
+

@@ -1,0 +1,38 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : topoSet
+Date   : Oct 27 2017
+Time   : 19:59:55
+Host   : "samu"
+PID    : 2822
+Case   : /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+
+
+--> FOAM FATAL IO ERROR: 
+cannot open file
+
+file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/system/topoSetDict at line 0.
+
+    From function regIOobject::readStream()
+    in file db/regIOobject/regIOobjectRead.C at line 86.
+
+FOAM exiting
+

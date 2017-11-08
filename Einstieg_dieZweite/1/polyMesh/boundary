@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "1/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+8
+(
+    wall
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          16;
+        startFace       189281;
+    }
+    inlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          128;
+        startFace       189297;
+    }
+    outlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          0;
+        startFace       189425;
+    }
+    Wand_Inlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          728;
+        startFace       189425;
+    }
+    Wand_Outlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          256;
+        startFace       190153;
+    }
+    Wand_TankOben
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          5492;
+        startFace       190409;
+    }
+    Wand_TankUnten
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          5760;
+        startFace       195901;
+    }
+    Wand_Tankwand
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          18274;
+        startFace       201661;
+    }
+)
+
+// ************************************************************************* //

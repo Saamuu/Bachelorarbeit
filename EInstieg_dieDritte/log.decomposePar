@@ -1,0 +1,109 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : decomposePar -cellDist
+Date   : Oct 27 2017
+Time   : 19:59:56
+Host   : "samu"
+PID    : 2825
+Case   : /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod hierarchical
+
+Finished decomposition in 0.01 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 2000
+    Number of faces shared with processor 1 = 200
+    Number of faces shared with processor 2 = 200
+    Number of processor patches = 2
+    Number of processor faces = 400
+    Number of boundary faces = 600
+
+Processor 1
+    Number of cells = 2000
+    Number of faces shared with processor 0 = 200
+    Number of faces shared with processor 3 = 200
+    Number of processor patches = 2
+    Number of processor faces = 400
+    Number of boundary faces = 600
+
+Processor 2
+    Number of cells = 2000
+    Number of faces shared with processor 0 = 200
+    Number of faces shared with processor 3 = 200
+    Number of processor patches = 2
+    Number of processor faces = 400
+    Number of boundary faces = 600
+
+Processor 3
+    Number of cells = 2000
+    Number of faces shared with processor 1 = 200
+    Number of faces shared with processor 2 = 200
+    Number of processor patches = 2
+    Number of processor faces = 400
+    Number of boundary faces = 600
+
+Number of processor faces = 800
+Max number of cells = 2000 (0% above average 2000)
+Max number of processor patches = 2 (0% above average 2)
+Max number of faces between processors = 400 (0% above average 400)
+
+
+Wrote decomposition to "/home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/constant/cellDecomposition" for use in manual decomposition.
+
+Wrote decomposition as volScalarField to cellDist for use in postprocessing.
+Time = 0
+--> FOAM Warning : 
+    From function const Foam::HashTable<Foam::List<int>, Foam::word>& Foam::polyBoundaryMesh::groupPatchIDs() const
+    in file meshes/polyMesh/polyBoundaryMesh/polyBoundaryMesh.C at line 448
+    Patch wall specifies a group wall which is also a patch name. This might give problems later on.
+--> FOAM Warning : 
+    From function const Foam::HashTable<Foam::List<int>, Foam::word>& Foam::polyBoundaryMesh::groupPatchIDs() const
+    in file meshes/polyMesh/polyBoundaryMesh/polyBoundaryMesh.C at line 448
+    Patch inlet specifies a group wall which is also a patch name. This might give problems later on.
+--> FOAM Warning : 
+    From function const Foam::HashTable<Foam::List<int>, Foam::word>& Foam::polyBoundaryMesh::groupPatchIDs() const
+    in file meshes/polyMesh/polyBoundaryMesh/polyBoundaryMesh.C at line 448
+    Patch outlet specifies a group wall which is also a patch name. This might give problems later on.
+
+
+--> FOAM FATAL IO ERROR: 
+Cannot find patchField entry for wall
+
+file: /home/samu/OpenFOAM/samu-4.1/run/EInstieg_dieDritte/0/alphat.boundaryField from line 19 to line 54.
+
+    From function void Foam::GeometricField<Type, PatchField, GeoMesh>::Boundary::readField(const Foam::DimensionedField<TypeR, GeoMesh>&, const Foam::dictionary&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]
+    in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/OpenFOAM/lnInclude/GeometricBoundaryField.C at line 191.
+
+FOAM exiting
+
