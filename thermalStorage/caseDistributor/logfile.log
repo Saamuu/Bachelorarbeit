@@ -1,0 +1,429 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : buoyantPimpleFoam -parallel
+Date   : Dec 06 2017
+Time   : 18:49:18
+Host   : "PC1"
+PID    : 2776
+Case   : /home/samuelknaus/Work/thermalStorage/caseDistributor
+nProcs : 8
+Slaves : 
+7
+(
+"PC1.2777"
+"PC1.2778"
+"PC1.2779"
+"PC1.2780"
+"PC1.2781"
+"PC1.2782"
+"PC1.2783"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 300
+
+
+PIMPLE: Operating solver in PISO mode
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       polynomial;
+    thermo          hPolynomial;
+    equationOfState icoPolynomial;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kEpsilon
+kEpsilonCoeffs
+{
+    Cmu             0.09;
+    C1              1.44;
+    C2              1.92;
+    C3              -0.33;
+    sigmak          1;
+    sigmaEps        1.3;
+}
+
+
+Reading g
+
+Reading hRef
+Calculating field g.h
+
+Reading field p_rgh
+
+Creating field dpdt
+
+Creating field kinetic energy K
+
+No MRF models present
+
+Radiation model not active: radiationProperties not found
+Selecting radiationModel none
+No finite volume options present
+
+Courant Number mean: 0.06235108101 max: 141.3092478
+
+Starting time loop
+
+Courant Number mean: 0.06235108101 max: 141.3092478
+Time = 300.08
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.002065128051, Final residual = 5.015636961e-07, No Iterations 12
+DILUPBiCG:  Solving for Uy, Initial residual = 0.00190171046, Final residual = 8.731370806e-07, No Iterations 14
+DILUPBiCG:  Solving for Uz, Initial residual = 0.000144290494, Final residual = 7.709400669e-07, No Iterations 6
+DILUPBiCG:  Solving for h, Initial residual = 0.0001378407275, Final residual = 5.002112988e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.03935670249, Final residual = 0.0002856088002, No Iterations 3
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.640434337e-06, global = -4.17973917e-09, cumulative = -4.17973917e-09
+GAMG:  Solving for p_rgh, Initial residual = 0.02119410795, Final residual = 4.599657614e-07, No Iterations 11
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 4.258651749e-09, global = -2.803067405e-10, cumulative = -4.46004591e-09
+DILUPBiCG:  Solving for epsilon, Initial residual = 4.148893356e-05, Final residual = 8.355971207e-07, No Iterations 3
+DILUPBiCG:  Solving for k, Initial residual = 0.0001394241868, Final residual = 5.928981184e-07, No Iterations 6
+ExecutionTime = 25.41 s  ClockTime = 25 s
+
+Courant Number mean: 0.06235529916 max: 136.6857323
+Time = 300.16
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.00237683914, Final residual = 6.39998862e-07, No Iterations 13
+DILUPBiCG:  Solving for Uy, Initial residual = 0.002179362702, Final residual = 4.844487426e-07, No Iterations 13
+DILUPBiCG:  Solving for Uz, Initial residual = 0.0001737728451, Final residual = 3.291798385e-07, No Iterations 9
+DILUPBiCG:  Solving for h, Initial residual = 0.000137291391, Final residual = 4.74998177e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.02261579664, Final residual = 9.892395177e-05, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 9.123175909e-07, global = 9.211025878e-09, cumulative = 4.750979968e-09
+GAMG:  Solving for p_rgh, Initial residual = 0.0164212149, Final residual = 3.519789139e-07, No Iterations 12
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.245381943e-09, global = 2.227015861e-10, cumulative = 4.973681554e-09
+DILUPBiCG:  Solving for epsilon, Initial residual = 4.417032939e-05, Final residual = 5.768583845e-07, No Iterations 4
+bounding epsilon, min: -0.0001084251047 max: 0.9619123843 average: 0.004356940223
+DILUPBiCG:  Solving for k, Initial residual = 0.0001378385016, Final residual = 9.399487573e-07, No Iterations 5
+ExecutionTime = 43.53 s  ClockTime = 43 s
+
+Courant Number mean: 0.06235717869 max: 133.6132006
+Time = 300.24
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.002305612908, Final residual = 2.815357616e-07, No Iterations 14
+DILUPBiCG:  Solving for Uy, Initial residual = 0.002111773066, Final residual = 8.190036809e-07, No Iterations 14
+DILUPBiCG:  Solving for Uz, Initial residual = 0.0001688303961, Final residual = 8.52296279e-07, No Iterations 8
+DILUPBiCG:  Solving for h, Initial residual = 0.0001366017221, Final residual = 6.530411157e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.02421828834, Final residual = 0.0001230753117, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.135529229e-06, global = -4.757738e-09, cumulative = 2.159435536e-10
+GAMG:  Solving for p_rgh, Initial residual = 0.01770487248, Final residual = 5.544557336e-07, No Iterations 10
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.116473993e-09, global = -1.570223461e-10, cumulative = 5.892120747e-11
+DILUPBiCG:  Solving for epsilon, Initial residual = 4.06497959e-05, Final residual = 8.94307649e-07, No Iterations 3
+DILUPBiCG:  Solving for k, Initial residual = 0.0001367839853, Final residual = 5.859904816e-07, No Iterations 6
+ExecutionTime = 61.37 s  ClockTime = 61 s
+
+Courant Number mean: 0.06235992119 max: 132.7865682
+Time = 300.32
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.00247272626, Final residual = 7.838163573e-07, No Iterations 13
+DILUPBiCG:  Solving for Uy, Initial residual = 0.002275684438, Final residual = 8.235087803e-07, No Iterations 12
+DILUPBiCG:  Solving for Uz, Initial residual = 0.0001789390385, Final residual = 8.896843533e-07, No Iterations 6
+DILUPBiCG:  Solving for h, Initial residual = 0.0001358349453, Final residual = 6.615710069e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.02585316451, Final residual = 0.0001989278711, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.836249782e-06, global = 3.395123388e-09, cumulative = 3.454044595e-09
+GAMG:  Solving for p_rgh, Initial residual = 0.01948658177, Final residual = 8.271536927e-07, No Iterations 12
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 7.637971491e-09, global = 5.355608487e-10, cumulative = 3.989605444e-09
+DILUPBiCG:  Solving for epsilon, Initial residual = 4.185943195e-05, Final residual = 9.161695045e-07, No Iterations 3
+DILUPBiCG:  Solving for k, Initial residual = 0.0001410484533, Final residual = 8.853541126e-07, No Iterations 7
+bounding k, min: -2.919429013e-06 max: 0.008188925325 average: 0.000332914532
+ExecutionTime = 79.15 s  ClockTime = 79 s
+
+Courant Number mean: 0.06235581306 max: 132.9207299
+Time = 300.4
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.002618320624, Final residual = 5.062299521e-07, No Iterations 13
+DILUPBiCG:  Solving for Uy, Initial residual = 0.00236440711, Final residual = 5.831403434e-07, No Iterations 13
+DILUPBiCG:  Solving for Uz, Initial residual = 0.0001950045278, Final residual = 3.076599574e-07, No Iterations 9
+DILUPBiCG:  Solving for h, Initial residual = 0.0001355901281, Final residual = 4.777845711e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.02746838616, Final residual = 0.0002329987652, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 2.15312368e-06, global = -4.273355692e-09, cumulative = -2.837502477e-10
+GAMG:  Solving for p_rgh, Initial residual = 0.02017060188, Final residual = 3.592638161e-07, No Iterations 13
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.319600179e-09, global = -3.041682806e-10, cumulative = -5.879185283e-10
+DILUPBiCG:  Solving for epsilon, Initial residual = 8.089696583e-05, Final residual = 4.789778866e-07, No Iterations 4
+bounding epsilon, min: -0.0003967227469 max: 1.871116115 average: 0.004361984273
+DILUPBiCG:  Solving for k, Initial residual = 0.0001527120063, Final residual = 4.002476584e-07, No Iterations 6
+bounding k, min: -3.71444478e-05 max: 0.008545508706 average: 0.0003329576275
+ExecutionTime = 97.65 s  ClockTime = 98 s
+
+Courant Number mean: 0.06236567072 max: 133.0814797
+Time = 300.48
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.002495568335, Final residual = 7.358120579e-07, No Iterations 13
+DILUPBiCG:  Solving for Uy, Initial residual = 0.002300622988, Final residual = 1.982050208e-07, No Iterations 15
+DILUPBiCG:  Solving for Uz, Initial residual = 0.000180988493, Final residual = 7.97710632e-07, No Iterations 7
+DILUPBiCG:  Solving for h, Initial residual = 0.0001354836003, Final residual = 2.843153826e-07, No Iterations 7
+GAMG:  Solving for p_rgh, Initial residual = 0.02714260462, Final residual = 0.00017417585, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.607130763e-06, global = -2.915718785e-10, cumulative = -8.794904067e-10
+GAMG:  Solving for p_rgh, Initial residual = 0.01949616644, Final residual = 3.637889287e-07, No Iterations 12
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.358350858e-09, global = 3.537903109e-10, cumulative = -5.257000958e-10
+DILUPBiCG:  Solving for epsilon, Initial residual = 0.0001174438795, Final residual = 3.745439282e-07, No Iterations 4
+bounding epsilon, min: -0.004426159892 max: 1.06804724 average: 0.004356127365
+DILUPBiCG:  Solving for k, Initial residual = 0.0001503009892, Final residual = 7.892261428e-07, No Iterations 7
+bounding k, min: -0.0003279909777 max: 0.0081343354 average: 0.0003327281413
+ExecutionTime = 116.11 s  ClockTime = 116 s
+
+Courant Number mean: 0.06234565929 max: 133.9284526
+Time = 300.56
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9462685357, Final residual = 2.191039871e-07, No Iterations 7
+DILUPBiCG:  Solving for Uy, Initial residual = 0.8287676154, Final residual = 8.319352302e-07, No Iterations 6
+DILUPBiCG:  Solving for Uz, Initial residual = 0.8051990924, Final residual = 4.778699449e-07, No Iterations 4
+DILUPBiCG:  Solving for h, Initial residual = 0.8121372151, Final residual = 4.186475521e-07, No Iterations 6
+GAMG:  Solving for p_rgh, Initial residual = 0.02824530386, Final residual = 0.0001833173632, No Iterations 4
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 1.693139714e-06, global = 9.090036105e-09, cumulative = 8.564336009e-09
+GAMG:  Solving for p_rgh, Initial residual = 0.01861852133, Final residual = 5.533266077e-07, No Iterations 12
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 5.569023419e-09, global = -6.68499454e-10, cumulative = 7.895836555e-09
+DILUPBiCG:  Solving for epsilon, Initial residual = 0.9206045914, Final residual = 3.965325786e-07, No Iterations 6
+bounding epsilon, min: -0.002703898785 max: 0.9592164829 average: 0.004352804918
+DILUPBiCG:  Solving for k, Initial residual = 0.9287748166, Final residual = 7.691514213e-07, No Iterations 33
+ExecutionTime = 135.49 s  ClockTime = 135 s
+
+Courant Number mean: 0.06236198188 max: 132.8899093
+Time = 300.64
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.7695985585, Final residual = 7.311543904e-07, No Iterations 8
+DILUPBiCG:  Solving for Uy, Initial residual = 0.7990164869, Final residual = 2.667979621e-07, No Iterations 8
+DILUPBiCG:  Solving for Uz, Initial residual = 0.9125357156, Final residual = 8.012239913e-07, No Iterations 8
+DILUPBiCG:  Solving for h, Initial residual = 0.9505544206, Final residual = 7.735984386e-07, No Iterations 8
+GAMG:  Solving for p_rgh, Initial residual = 0.03362425084, Final residual = 0.0003280074471, No Iterations 9
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 3.302884168e-06, global = 1.551548704e-08, cumulative = 2.341132359e-08
+GAMG:  Solving for p_rgh, Initial residual = 1.255519755e-10, Final residual = 1.255519755e-10, No Iterations 0
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0.0002411622323, global = 6.019867722e-08, cumulative = 8.361000081e-08
+DILUPBiCG:  Solving for epsilon, Initial residual = 0.332503298, Final residual = 8.274558245e-07, No Iterations 51
+bounding epsilon, min: -1.208220203e+14 max: 3.944075446e+14 average: 461279101.3
+DILUPBiCG:  Solving for k, Initial residual = 0.9987872058, Final residual = 8707546871, No Iterations 1001
+bounding k, min: -6.788409061e+34 max: 2.187223282e+34 average: -3.327599829e+28
+ExecutionTime = 269.33 s  ClockTime = 269 s
+
+Courant Number mean: 0.0627971207 max: 210.7544973
+Time = 300.72
+
+diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+PIMPLE: iteration 1
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9633965901, Final residual = 0.02451277618, No Iterations 1001
+DILUPBiCG:  Solving for Uy, Initial residual = 0.9450736001, Final residual = 0.01750313414, No Iterations 1001
+DILUPBiCG:  Solving for Uz, Initial residual = 0.9845578635, Final residual = 7.062158053e-05, No Iterations 1001
+DILUPBiCG:  Solving for h, Initial residual = 0.992074635, Final residual = 1.030380273e+28, No Iterations 1001
+[2] [3] 
+[3] 
+[3] --> FOAM FATAL ERROR: 
+[3] Maximum number of iterations exceeded
+[3] 
+[3]     From function Foam::scalar Foam::species::thermo<Thermo, Type>::T(Foam::scalar, Foam::scalar, Foam::scalar, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar) const) const [with Thermo = Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >; Type = Foam::sensibleEnthalpy; Foam::scalar = double; Foam::species::thermo<Thermo, Type> = Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >, Foam::sensibleEnthalpy>]
+[3]     in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/thermophysicalModels/specie/lnInclude/thermoI.H at line 66.
+[3] 
+FOAM parallel run aborting
+[3] 
+[4] 
+[4] 
+[4] --> FOAM FATAL ERROR: 
+[4] Maximum number of iterations exceeded
+[4] 
+[4]     From function Foam::scalar Foam::species::thermo<Thermo, Type>::T(Foam::scalar, Foam::scalar, Foam::scalar, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar) const) const [with Thermo = Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >; Type = Foam::sensibleEnthalpy; Foam::scalar = double; Foam::species::thermo<Thermo, Type> = Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >, Foam::sensibleEnthalpy>]
+[4]     in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/thermophysicalModels/specie/lnInclude/thermoI.H at line 66.
+[4] 
+FOAM parallel run aborting
+[4] 
+[7] 
+[7] 
+[7] --> FOAM FATAL ERROR: 
+[7] Maximum number of iterations exceeded
+[7] 
+[7]     From function Foam::scalar Foam::species::thermo<Thermo, Type>::T(Foam::scalar, Foam::scalar, Foam::scalar, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar) const) const [with Thermo = Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >; Type = Foam::sensibleEnthalpy; Foam::scalar = double; Foam::species::thermo<Thermo, Type> = Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >, Foam::sensibleEnthalpy>]
+[7]     in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/thermophysicalModels/specie/lnInclude/thermoI.H at line 66.
+[7] 
+FOAM parallel run aborting
+[7] 
+
+[2] 
+[2] --> FOAM FATAL ERROR: 
+[2] Maximum number of iterations exceeded[5] #0  [1] #0  Foam::error::printStack(Foam::Ostream&)[0] #0  Foam::error::printStack(Foam::Ostream&)[7] #0  Foam::error::printStack(Foam::Ostream&)[3] #0  Foam::error::printStack(Foam::Ostream&)Foam::error::printStack(Foam::Ostream&)[4] #0  Foam::error::printStack(Foam::Ostream&)[6] #0  Foam::error::printStack(Foam::Ostream&)
+[2] 
+[2]     From function Foam::scalar Foam::species::thermo<Thermo, Type>::T(Foam::scalar, Foam::scalar, Foam::scalar, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar, Foam::scalar) const, Foam::scalar (Foam::species::thermo<Thermo, Type>::*)(Foam::scalar) const) const [with Thermo = Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >; Type = Foam::sensibleEnthalpy; Foam::scalar = double; Foam::species::thermo<Thermo, Type> = Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie> >, Foam::sensibleEnthalpy>]
+[2]     in file /home/ubuntu/OpenFOAM/OpenFOAM-4.1/src/thermophysicalModels/specie/lnInclude/thermoI.H at line 66.
+[2] 
+FOAM parallel run aborting
+[2] 
+[2] #0  Foam::error::printStack(Foam::Ostream&) at ??:?
+[5] #1  Foam::sigFpe::sigHandler(int) at ??:?
+[7] #1  Foam::error::abort() at ??:?
+[6] #1  Foam::sigFpe::sigHandler(int) at ??:?
+[4] #1  Foam::error::abort() at ??:?
+[0] #1  Foam::sigFpe::sigHandler(int) at ??:?
+[2] #1  Foam::error::abort() at ??:?
+[1] #1  Foam::sigFpe::sigHandler(int) at ??:?
+[3] #1  Foam::error::abort() at ??:?
+[5] #2  ? at ??:?
+[1] #2  ? in "/lib/x86_64-linux-gnu/libc.so.6"
+[5] #3   at ??:?
+Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate()[0] #2  ? at ??:?
+[4] #2  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+[6] #2  ? at ??:?
+[7] #2  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+ in "/lib/x86_64-linux-gnu/libc.so.6"
+[1] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+[3] #2  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate()[2] #2  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+[5] #4  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() in "/lib/x86_64-linux-gnu/libc.so.6"
+[0] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+[4] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() in "/lib/x86_64-linux-gnu/libc.so.6"
+ at ??:?
+[2] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() at ??:?
+[1] #4  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct()[6] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::calculate() at ??:?
+[5] #5   at ??:?
+[7] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() at ??:?
+[3] #3  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct()? at ??:?
+[1] #5   at ??:?
+[0] #4  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() at ??:?
+[4] #4   at ??:?
+[5] #6  __libc_start_main at ??:?
+[6] #4  Foam::heRhoThermo<Foam::rhoThermo, Foam::pureMixture<Foam::polynomialTransport<Foam::species::thermo<Foam::hPolynomialThermo<Foam::icoPolynomial<Foam::specie, 8>, 8>, Foam::sensibleEnthalpy>, 8> > >::correct() at ??:?
+[7] #4   at ??:?
+[2] #4  ? at ??:?
+[3] #4   in "/lib/x86_64-linux-gnu/libc.so.6"
+[5] #7   at ??:?
+[0] #5  ?? at ??:?
+[6] #5   at ??:?
+[1] #6  __libc_start_main?? at ??:?
+[PC1:02781] *** Process received signal ***
+[PC1:02781] Signal: Floating point exception (8)
+[PC1:02781] Signal code:  (-6)
+[PC1:02781] Failing at address: 0x3ea00000add
+[PC1:02781] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7ff6a1c904b0]
+[PC1:02781] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38)[0x7ff6a1c90428]
+[PC1:02781] [ 2] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7ff6a1c904b0]
+[PC1:02781] [ 3] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE9calculateEv+0x238)[0x7ff6a491cf48]
+[PC1:02781] [ 4] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE7correctEv+0x1e)[0x7ff6a491d95e]
+[PC1:02781] [ 5] buoyantPimpleFoam[0x43251c]
+[PC1:02781] [ 6] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7ff6a1c7b830]
+[PC1:02781] [ 7] buoyantPimpleFoam[0x435c49]
+[PC1:02781] *** End of error message ***
+ in "/lib/x86_64-linux-gnu/libc.so.6"
+[1] #7   at ??:?
+[4] #5  __libc_start_main?? at ??:?
+[2] #5  __libc_start_main at ??:?
+[7] #5  __libc_start_main at ??:?
+[3] #5  __libc_start_main? in "/lib/x86_64-linux-gnu/libc.so.6"
+[4] #6  ? in "/lib/x86_64-linux-gnu/libc.so.6"
+[2] #6   at ??:?
+[0] #6  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+[7] #6   in "/lib/x86_64-linux-gnu/libc.so.6"
+[3] #6   at ??:?
+[PC1:02777] *** Process received signal ***
+[PC1:02777] Signal: Floating point exception (8)
+[PC1:02777] Signal code:  (-6)
+[PC1:02777] Failing at address: 0x3ea00000ad9
+[PC1:02777] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7f6ed3a0a4b0]
+[PC1:02777] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38)[0x7f6ed3a0a428]
+[PC1:02777] [ 2] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7f6ed3a0a4b0]
+[PC1:02777] [ 3] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE9calculateEv+0x204)[0x7f6ed6696f14]
+[PC1:02777] [ 4] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE7correctEv+0x1e)[0x7f6ed669795e]
+[PC1:02777] [ 5] buoyantPimpleFoam[0x43251c]
+[PC1:02777] [ 6] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7f6ed39f5830]
+[PC1:02777] [ 7] buoyantPimpleFoam[0x435c49]
+[PC1:02777] *** End of error message ***
+? at ??:?
+[6] #6  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+[0] #7  ??--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI_COMM_WORLD 
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+? at ??:?
+? in "/lib/x86_64-linux-gnu/libc.so.6"
+[6] #7   at ??:?
+ at ??:?
+ at ??:?
+ at ??:?
+[PC1:02776] *** Process received signal ***
+[PC1:02776] Signal: Floating point exception (8)
+[PC1:02776] Signal code:  (-6)
+[PC1:02776] Failing at address: 0x3ea00000ad8
+[PC1:02776] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7f29646494b0]
+[PC1:02776] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38)[0x7f2964649428]
+[PC1:02776] [ 2] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7f29646494b0]
+[PC1:02776] [ 3] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE9calculateEv+0x204)[0x7f29672d5f14]
+[PC1:02776] [ 4] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE7correctEv+0x1e)[0x7f29672d695e]
+[PC1:02776] [ 5] buoyantPimpleFoam[0x43251c]
+[PC1:02776] [ 6] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7f2964634830]
+[PC1:02776] [ 7] buoyantPimpleFoam[0x435c49]
+[PC1:02776] *** End of error message ***
+? at ??:?
+[PC1:02782] *** Process received signal ***
+[PC1:02782] Signal: Floating point exception (8)
+[PC1:02782] Signal code:  (-6)
+[PC1:02782] Failing at address: 0x3ea00000ade
+[PC1:02782] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7ff88b8fb4b0]
+[PC1:02782] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38)[0x7ff88b8fb428]
+[PC1:02782] [ 2] /lib/x86_64-linux-gnu/libc.so.6(+0x354b0)[0x7ff88b8fb4b0]
+[PC1:02782] [ 3] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE9calculateEv+0x21a)[0x7ff88e587f2a]
+[PC1:02782] [ 4] /opt/openfoam4/platforms/linux64GccDPInt32Opt/lib/libfluidThermophysicalModels.so(_ZN4Foam11heRhoThermoINS_9rhoThermoENS_11pureMixtureINS_19polynomialTransportINS_7species6thermoINS_17hPolynomialThermoINS_13icoPolynomialINS_6specieELi8EEELi8EEENS_16sensibleEnthalpyEEELi8EEEEEE7correctEv+0x1e)[0x7ff88e58895e]
+[PC1:02782] [ 5] buoyantPimpleFoam[0x43251c]
+[PC1:02782] [ 6] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7ff88b8e6830]
+[PC1:02782] [ 7] buoyantPimpleFoam[0x435c49]
+[PC1:02782] *** End of error message ***
+[PC1:02774] 3 more processes have sent help message help-mpi-api.txt / mpi-abort
+[PC1:02774] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

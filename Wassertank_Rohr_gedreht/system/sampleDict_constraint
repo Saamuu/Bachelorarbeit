@@ -1,0 +1,89 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        "system";
+    object          sampleDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+interpolationScheme cellPatchConstrained;
+
+setFormat raw;
+
+sets
+(
+    y00
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 1);
+        end             (0 0 1);
+    }
+    y01
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1767767 0.1767767 1);
+        end             (0 0 1);
+    }
+     y02
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 1);
+        end             (0 0 1);
+    }
+       y03
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1767767 0.1767767 1);
+        end             (0 0 1);
+    }
+      y04
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 1);
+        end             (0 0 1);
+    }
+       y05
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1767767 -0.1767767 1);
+        end             (0 0 1);
+    }
+    y06
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 1);
+        end             (0 0 1);
+    }
+       y07
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1767767 -0.1767767 1);
+        end             (0 0 1);
+    }
+);
+
+fields
+(
+ UMean
+);
+
+
+// ************************************************************************* //

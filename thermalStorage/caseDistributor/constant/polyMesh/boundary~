@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|       o          |                                                          |
+|    o     o       | OpenFOAM (Engys Edition):                                |
+|   o   O   o      | Version: 2.2_engysEdition-2.5                            |
+|    o     o       | Web:     http://www.engys.com                            |
+|       o          |                                                          |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "0/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+6
+(
+    wallOutlet_zone0
+    {
+        type            wall;
+        nFaces          2816;
+        startFace       8360192;
+    }
+    wallDistributor_zone0
+    {
+        type            wall;
+        nFaces          354696;
+        startFace       8363008;
+    }
+    wallTank_zone0
+    {
+        type            wall;
+        nFaces          47068;
+        startFace       8717704;
+    }
+    inlet_zone0
+    {
+        type            patch;
+        nFaces          340;
+        startFace       8764772;
+    }
+    outlet_zone0
+    {
+        type            patch;
+        nFaces          340;
+        startFace       8765112;
+    }
+    wallInlet_zone0
+    {
+        type            wall;
+        nFaces          2332;
+        startFace       8765452;
+    }
+)
+
+// ************************************************************************* //

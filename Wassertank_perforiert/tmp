@@ -1,0 +1,108 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : postProcess -func sample
+Date   : Nov 15 2017
+Time   : 12:44:10
+Host   : "samu"
+PID    : 25617
+Case   : /home/samu/OpenFOAM/samu-4.1/run/Wassertank_grob
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+--> FOAM Warning : 
+    From function static bool Foam::functionObjectList::readFunctionObject(const Foam::string&, Foam::dictionary&, Foam::HashSet<>&, const Foam::word&)
+    in file db/functionObjects/functionObjectList/functionObjectList.C at line 245
+    Cannot find functionObject file sample
+Time = 0
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 6
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 10
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 12
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 18
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 20
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 24
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 30
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 36
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 40
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 42
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 48
+
+Reading fields:
+
+Executing functionObjects
+
+Time = 50
+
+Reading fields:
+
+Executing functionObjects
+
+End
+

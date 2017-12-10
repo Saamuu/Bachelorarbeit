@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|       o          |                                                          |
+|    o     o       | OpenFOAM (Engys Edition):                                |
+|   o   O   o      | Version: 2.2_engysEdition-2.4                            |
+|    o     o       | Web:     http://www.engys.com                            |
+|       o          |                                                          |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        type            zeroGradient;
+    }
+
+    outlet
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+
+
+    Wand_Tankwand
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+    Wand_TankOben
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+    Wand_TankUnten
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+    Wand_Inlet
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+    Wand_Outlet
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+    wall
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        rho             rhok;
+        value           uniform 0;
+    }
+
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "2/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    outlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          16;
+        startFace       428912;
+    }
+    inlet
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          32;
+        startFace       428928;
+    }
+    wall
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          0;
+        startFace       428960;
+    }
+    wall_inlet2
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          300;
+        startFace       428960;
+    }
+    wall_distributor1
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          28378;
+        startFace       429260;
+    }
+    wall_outlet2
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          96;
+        startFace       457638;
+    }
+    wall_Tank
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          3028;
+        startFace       457734;
+    }
+    wall_tankoben
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1380;
+        startFace       460762;
+    }
+    wall_tankunten
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          1296;
+        startFace       462142;
+    }
+)
+
+// ************************************************************************* //

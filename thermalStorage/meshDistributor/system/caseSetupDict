@@ -1,0 +1,193 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    class           dictionary;
+    object          caseSetupDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+regions (region0);
+
+region0
+{
+
+modificationSwitches
+{
+    resetInternalFields yes; //overwrite existing field internal values - yes/no
+    resetBoundaryFields yes; //overwrite exiting field boundaries - yes/no
+    resetSystemDicts yes; //write system dictionaries
+    resetConstDicts yes; //write constant dictionaries
+    resetBoundaryMesh yes; //applies boundary mesh modifications
+    deleteUnusedFields yes; //deletes files in target directory that are not 
+                            //fields initialised by caseSetup
+    reuseExistingDicts no; //merge existing dictionaries instead of overwriting
+}
+
+boundaryMesh
+{
+    exactNamed
+    {
+    }   
+
+    partialNamed
+    {
+        wall{type wall;}
+        inlet{type inlet;}
+        outlet{type outlet;}
+    }
+
+    exactNamed
+    {
+    }
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+global
+{
+   /*
+    //currently available states are:
+    state(steady incompressible ras); //simpleFoam
+    state(steady incompressible ras buoyant); //buoyantBoussinesqSimpleFoam
+    state(steady incompressible ras buoyant humidity); //buoyantBoussinesqSimpleFoam
+    state(transient incompressible ras); //pisoFoam
+    state(transient incompressible les); //pisoFoam
+    state(transient incompressible ras buoyant); //buoyantBoussinesqPisoFoam
+    state(transient incompressible ras buoyant humidity); //buoyantBoussinesqPisoFoam
+    state(transient incompressible les buoyant); //buoyantBoussinesqPisoFoam
+    state(transient incompressible les buoyant humidity); //buoyantBoussinesqPisoFoam
+    state(steady compressible ras); //rhoSimpleFoam
+    state(transient compressible ras); //rhoTurbFoam
+    state(steady compressible ras buoyant); //buoyantSimpleFoam
+    state(transient compressible ras buoyant); //buoyantPisoFoam
+    */
+    state 
+    (
+        steady
+        incompressible
+        ras
+    );
+
+    turbulenceModel kOmegaSST;
+    materials (air);
+
+    materialProperties {}
+
+    fieldMaps{}
+
+    constant 
+    {
+        g
+        {
+            dimensions      [ 0 1 -2 0 0 0 0 ];
+            value           ( 0 0 -9.81);
+        }
+    }
+
+    system 
+    {   
+       
+
+
+	    controlDict
+	    {
+            application     simpleFoam;
+
+            startFrom       latestTime;
+
+            startTime       0;
+
+            stopAt          endTime;
+
+            endTime         5000;
+
+            deltaT          1;
+
+            writeControl    timeStep;
+
+            writeInterval   100;
+
+            purgeWrite      2;
+
+            writeFormat     ascii;
+
+            writePrecision  6;
+
+            writeCompression compressed;
+
+            timeFormat      general;
+
+            timePrecision   6;
+
+            graphFormat     raw;
+
+            runTimeModifiable yes;
+	    }
+    }
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+fields
+{
+    U{initialisation{type fixedValue;value uniform (0 0 0);}}
+
+    p{initialisation{type fixedValue;value uniform 0;}}
+
+     k{initialisation{type Prandtl;}}
+     
+//    k{initialisation{type fixedValue;value uniform 0.001;}}
+
+//    omega{initialisation{type fixedValue;value uniform 0.1;}}
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+boundaryConditions
+{
+
+    regionDefaults
+    {
+          wall {}
+        inlet {}
+        outlet {}
+        patch {}
+    }
+
+    partialNamed
+    {
+    }
+
+    exactNamed
+    {
+    /*
+       inlet
+	    {
+		    U
+		    {
+			    type fixedValue;
+			    value uniform (0.1 0 0);	  
+		    }
+		 
+           	 
+	    }
+	*/
+    }
+
+}
+
+functions
+(
+);
+
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+include "$FOAM_CONFIG/caseSetupDict.defaults";
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //

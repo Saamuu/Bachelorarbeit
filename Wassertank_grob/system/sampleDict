@@ -1,0 +1,593 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        "system";
+    object          sampleDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+interpolationScheme cellPatchConstrained;
+
+setFormat raw;
+
+sets
+(
+    y00
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 1);
+        end             (0 0 1);
+    }
+    y01
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 0.1768 1);
+        end             (0 0 1);
+    }
+    y02
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 1);
+        end             (0 0 1);
+    }
+    y03
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 0.1768 1);
+        end             (0 0 1);
+    }
+    y04
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 1);
+        end             (0 0 1);
+    }
+    y05
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 -0.1768 1);
+        end             (0 0 1);
+    }
+    y06
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 1);
+        end             (0 0 1);
+    }
+    y07
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 -0.1768 1);
+        end             (0 0 1);
+    }
+    y08
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 2);
+        end             (0 0 2);
+    }
+    y09
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 0.1768 2);
+        end             (0 0 2);
+    }
+    y10
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 2);
+        end             (0 0 2);
+    }
+    y11
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 0.1768 2);
+        end             (0 0 2);
+    }
+    y12
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 2);
+        end             (0 0 2);
+    }
+    y13
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 -0.1768 2);
+        end             (0 0 2);
+    }
+    y14
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 2);
+        end             (0 0 2);
+    }
+    y15
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 -0.1768 2);
+        end             (0 0 2);
+    }
+    y16
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 3);
+        end             (0 0 3);
+    }
+    y17
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 0.1768 3);
+        end             (0 0 3);
+    }
+    y18
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 3);
+        end             (0 0 3);
+    }
+    y19
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 0.1768 3);
+        end             (0 0 3);
+    }
+    y20
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 3);
+        end             (0 0 3);
+    }
+    y21
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 -0.1768 3);
+        end             (0 0 3);
+    }
+    y22
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 3);
+        end             (0 0 3);
+    }
+    y23
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 -0.1768 3);
+        end             (0 0 3);
+    }
+    y24
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 4.05);
+        end             (0 0 4.05);
+    }
+    y25
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 0.1768 4.05);
+        end             (0 0 4.05);
+    }
+    y26
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 4.05);
+        end             (0 0 4.05);
+    }
+    y27
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 0.1768 4.05);
+        end             (0 0 4.05);
+    }
+    y28
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 4.05);
+        end             (0 0 4.05);
+    }
+    y29
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 -0.1768 4.05);
+        end             (0 0 4.05);
+    }
+    y30
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 4.05);
+        end             (0 0 4.05);
+    }
+    y31
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 -0.1768 4.05);
+        end             (0 0 4.05);
+    }
+    y32
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.25 0 5);
+        end             (0 0 5);
+    }
+    y33
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 0.1768 5);
+        end             (0 0 5);
+    }
+    y34
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 0.25 5);
+        end             (0 0 5);
+    }
+    y35
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 0.1768 5);
+        end             (0 0 5);
+    }
+    y36
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.25 0 5);
+        end             (0 0 5);
+    }
+    y37
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.1768 -0.1768 5);
+        end             (0 0 5);
+    }
+    y38
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0 -0.25 5);
+        end             (0 0 5);
+    }
+    y39
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.1768 -0.1768 5);
+        end             (0 0 5);
+    }
+    y40
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 0.125 1);
+        end             (0 0 1);
+    }
+    y41
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 0.2166 1);
+        end             (0 0 1);
+    }
+    y42
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 0.2166 1);
+        end             (0 0 1);
+    }
+    y43
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 0.125 1);
+        end             (0 0 1);
+    }
+    y44
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 -0.125 1);
+        end             (0 0 1);
+    }
+    y45
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 -0.2166 1);
+        end             (0 0 1);
+    }
+    y46
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 -0.2166 1);
+        end             (0 0 1);
+    }
+    y47
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 -0.125 1);
+        end             (0 0 1);
+    }
+    y48
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 0.125 2);
+        end             (0 0 2);
+    }
+    y49
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 0.2166 2);
+        end             (0 0 2);
+    }
+    y50
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 0.2166 2);
+        end             (0 0 2);
+    }
+    y51
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 0.125 2);
+        end             (0 0 2);
+    }
+    y52
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 -0.125 2);
+        end             (0 0 2);
+    }
+    y53
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 -0.2166 2);
+        end             (0 0 2);
+    }
+    y54
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 -0.2166 2);
+        end             (0 0 2);
+    }
+    y55
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 -0.125 2);
+        end             (0 0 2);
+    }
+    y56
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 0.125 3);
+        end             (0 0 3);
+    }
+    y57
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 0.2166 3);
+        end             (0 0 3);
+    }
+    y58
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 0.2166 3);
+        end             (0 0 3);
+    }
+    y59
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 0.125 3);
+        end             (0 0 3);
+    }
+    y60
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 -0.125 3);
+        end             (0 0 3);
+    }
+    y61
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 -0.2166 3);
+        end             (0 0 3);
+    }
+    y62
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 -0.2166 3);
+        end             (0 0 3);
+    }
+    y63
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 -0.125 3);
+        end             (0 0 3);
+    }
+    y64
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 0.125 4);
+        end             (0 0 4);
+    }
+    y65
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 0.2166 4);
+        end             (0 0 4);
+    }
+    y66
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 0.2166 4);
+        end             (0 0 4);
+    }
+    y67
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 0.125 4);
+        end             (0 0 4);
+    }
+    y68
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 -0.125 4);
+        end             (0 0 4);
+    }
+    y69
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 -0.2166 4);
+        end             (0 0 4);
+    }
+    y70
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 -0.2166 4);
+        end             (0 0 4);
+    }
+    y71
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 -0.125 4);
+        end             (0 0 4);
+    }
+    y72
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 0.125 5);
+        end             (0 0 5);
+    }
+    y73
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 0.2166 5);
+        end             (0 0 5);
+    }
+    y74
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 0.2166 5);
+        end             (0 0 5);
+    }
+    y75
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 0.125 5);
+        end             (0 0 5);
+    }
+    y76
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.2166 -0.125 5);
+        end             (0 0 5);
+    }
+    y77
+    {
+        type            midPoint;
+        axis            distance;
+        start           (-0.125 -0.2166 5);
+        end             (0 0 5);
+    }
+    y78
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.125 -0.2166 5);
+        end             (0 0 5);
+    }
+    y79
+    {
+        type            midPoint;
+        axis            distance;
+        start           (0.2166 -0.125 5);
+        end             (0 0 5);
+    } 
+);
+
+fields
+(
+ UMean
+);
+
+
+// ************************************************************************* //

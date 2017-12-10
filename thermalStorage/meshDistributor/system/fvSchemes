@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+|       o          |                                                          |
+|    o     o       | OpenFOAM (Engys Edition):                                |
+|   o   O   o      | Version: 2.1_engysEdition-1.0                            |
+|    o     o       | Web:     http://www.engys.com                            |
+|       o          |                                                          |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ddtSchemes
+{
+    default         backward;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+    grad(nuTilda)   cellLimited Gauss linear 1;
+    grad(k)         cellLimited Gauss linear 1;
+    grad(kl)        cellLimited Gauss linear 1;
+    grad(omega)     cellLimited Gauss linear 1;
+    grad(epsilon)   cellLimited Gauss linear 1;
+}
+
+divSchemes
+{
+    default         Gauss linear;
+    div(phi,U)      Gauss filteredLinear2V 0.5 0;
+    div(phi,k)      Gauss limitedLinear 1;
+    div(phi,epsilon) Gauss linearUpwind grad(epsilon);
+    div(phi,omega)  Gauss linearUpwind grad(omega);
+    div(phi,nuTilda) Gauss limitedLinear 1;
+    div(phi,T)      Gauss limitedLinear 1;
+    div(phi,kl)     Gauss limitedLinear 1;
+    div(phi,R)      Gauss upwind;
+    div(R)          Gauss linear;
+    div((nuEff*dev(grad(U).T()))) Gauss linear;
+    div(phi,h)      Gauss limitedLinear 1;
+    div(phi,e)      Gauss limitedLinear 1;
+    div(phi,K)      Gauss limitedLinear 1;
+    div(phi,Ekp)    Gauss linear;
+}
+
+interpolationSchemes
+{
+    default         linear;
+    interpolate(HbyA) linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear limited 0.333;
+}
+
+snGradSchemes
+{
+    default         limited 0.333;
+}
+
+fluxRequired
+{
+    default         no;
+    p               ;
+    p_rgh           ;
+}
+
+
+// ************************************************************************* //

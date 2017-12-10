@@ -1,0 +1,220 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    class           dictionary;
+    object          caseSetupDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+regions (region0);
+
+region0
+{
+
+//dictionary modification switches
+//note the dictionaries will be created in all instances where they do not exist on disk already
+//the switches therefore generally only have an effect when rerunnning caseSetup
+modificationSwitches
+{
+    resetInternalFields yes; //overwrite existing field internal values - yes/no
+    resetBoundaryFields yes; //overwrite exiting field boundaries - yes/no
+    resetSystemDicts yes; //replace existing dictionaries in system
+    resetConstDicts yes; //replace existing entries in constant, special handling of
+                         //material properties and turbulence
+    resetBoundaryMesh yes; //applies boundary mesh modifications
+}
+
+boundaryMesh
+{
+    partialNamed
+    {
+        inlet{type inlet;}
+        outlet{type outlet;}
+        wall{type wall;}
+    }
+
+    exactNamed
+    {
+    }
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+global
+{
+    state // word list that should match on of the available states - order is not important
+    (
+       transient incompressible les buoyant
+    );
+
+    /*
+    //currently available states are:
+    state(steady incompressible ras); //simpleFoam
+    state(steady incompressible ras buoyant); //buoyantBoussinesqSimpleFoam
+    state(steady incompressible ras buoyant humidity); //buoyantBoussinesqSimpleFoam
+    state(transient incompressible ras); //pisoFoam
+    state(transient incompressible les); //pisoFoam
+    state(transient incompressible ras buoyant); //buoyantBoussinesqPisoFoam
+    state(transient incompressible ras buoyant humidity); //buoyantBoussinesqPisoFoam
+    state(transient incompressible les buoyant); //buoyantBoussinesqPisoFoam
+    state(transient incompressible les buoyant humidity); //buoyantBoussinesqPisoFoam
+    state(steady compressible ras); //rhoSimpleFoam
+    state(transient compressible ras); //rhoTurbFoam
+    state(steady compressible ras buoyant); //buoyantSimpleFoam
+    state(transient compressible ras buoyant); //buoyantPisoFoam
+    */
+
+    //material model/properties
+    turbulenceModel oneEqEddy;
+    materials (air);
+
+    //below is all optional - sensible defaults are available
+    
+    materialProperties {
+    rho             rho [ 1 -3 0 0 0 0 0 ] 998;
+
+    nu              nu [ 0 2 -1 0 0 0 0 ] 9.58813278e-04;
+
+    Cp              Cp [ 0 2 -2 -1 0 0 0 ] 4180;
+
+    Prt             Prt [ 0 0 0 0 0 0 0 ] 7;
+
+    lambda          lambda [ 1 1 -3 -1 0 0 0 ] 0.58;
+
+    pRef            pRef [ 1 -1 -2 0 0 0 0 ] 101325;
+    
+}
+
+    fieldMaps{}
+
+    constant 
+    { 
+        g
+        {
+	        dimensions      [ 0 1 -2 0 0 0 0 ];
+        	value           ( 0 -9.81 0);
+        }
+
+    }
+
+    system 
+    {
+	controlDict
+        {
+		startFrom       latestTime;
+                startTime       0;
+	        stopAt          endTime;
+	        endTime         500;
+	        deltaT          1;
+	        writeControl    timeStep;
+	        writeInterval   100;
+	        purgeWrite      2;
+        }
+    }
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+fields
+{
+
+    U{initialisation{type fixedValue; value uniform (0.1 0 0);}}
+
+    p{initialisation{type fixedValue; value uniform 0;}}
+
+    p_rgh{initialisation{type fixedValue; value uniform 0;}}
+
+    k{initialisation{type Prandtl;}}
+    
+
+    T{initialisation{type fixedValue; value uniform 293.15;}}
+
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+boundaryConditions
+{
+
+    regionDefaults
+    {
+        wall {}
+        inlet {}
+        outlet {}
+        patch {}
+    }
+
+    partialNamed
+    {
+	  
+
+	    inlet
+	    {
+		    U
+		    {
+			    type fixedValue;
+			    value uniform (0.1 0 0);
+			  
+		    }
+		    T
+		    {
+			    type fixedValue;
+			    value uniform 293.15;
+		    }
+           	 
+	    }
+	    cylinder
+	    {
+		    T
+		    {
+			    type incompressible::turbulentHeatFluxTemperature;
+			    value uniform 350;
+			    q uniform 0.0;
+	        	    heatSource flux;		
+		    }
+	    }
+	    wall
+	    {
+		    T
+		    {
+			    type fixedValue;
+			    value uniform 293.15;
+			  
+		    }
+	    }
+            outlet
+            {
+            	    p 
+		    {
+			    type fixedValue; 
+			    value uniform 0;
+		    }
+            }
+    }
+
+    exactNamed
+    {
+    
+         
+
+
+	 }
+
+}
+
+functions
+(
+ 
+   
+);
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+include "$FOAM_CONFIG/caseSetupDict.defaults";
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
